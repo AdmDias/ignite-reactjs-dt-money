@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { Header } from "../../components/Header";
 import { SearchForm } from "../../components/SearchForm";
 import { Summary } from "../../components/Summary";
 import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
+import { Transaction, TransactionContext } from "../../contexts/TransactionContext";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
 
 export function Transactions() {
+    const { transactions } = useContext(TransactionContext)
+
     return (
         <div>
             <Header />
@@ -14,26 +19,23 @@ export function Transactions() {
 
                 <TransactionsTable>
                     <tbody>
-                        <tr>
-                            <td width="50%">Transação</td>
-                            <td>
-                                <PriceHighlight typeTransactionVariant="inbound">
-                                    R$ 1.200,00
-                                </PriceHighlight>
-                            </td>
-                            <td>Tipo A</td>
-                            <td>02/05/2023</td>
-                        </tr>
-                        <tr>
-                            <td width="50%">Transação</td>
-                            <td>
-                                <PriceHighlight typeTransactionVariant="outbound">
-                                    -R$ 1.200,00
-                                </PriceHighlight>
-                            </td>
-                            <td>Tipo B</td>
-                            <td>02/05/2023</td>
-                        </tr>
+                        {
+                            transactions.map((item : Transaction) => {
+                                return (
+                                    <tr key={item.id}>
+                                        <td width="50%">{ item.description }</td>
+                                        <td>
+                                            <PriceHighlight typetransactionvariant={item.type}>
+                                                { item.type === 'outbound' && '- '}
+                                                { priceFormatter.format(item.price) }
+                                            </PriceHighlight>
+                                        </td>
+                                        <td>{ item.category }</td>
+                                        <td>{ dateFormatter.format(new Date(item.createdAt)) }</td>
+                                    </tr>
+                                )
+                            })
+                        }
                     </tbody>
                 </TransactionsTable>
                 

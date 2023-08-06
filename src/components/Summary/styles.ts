@@ -11,10 +11,14 @@ export const SummaryContainer = styled.section`
     gap: 2rem;
 
     margin-top: -5rem;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 `;
 
 interface SummaryCardProps {
-    colorVariant ?: 'green';
+    colorvariant ?: 'green';
 }
 
 export const SummaryCard = styled.div<SummaryCardProps>`
@@ -33,10 +37,14 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     strong {
         display: block;
         margin-top: 1rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.4rem;
+        }
     }
 
-    ${props => props.colorVariant === 'green' && css`
+    ${props => props.colorvariant === 'green' && css`
         background: ${props.theme['green-700']};
     `};
 `;

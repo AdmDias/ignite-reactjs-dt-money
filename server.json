@@ -1,0 +1,52 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "description": "Compra mercado",
+      "type": "outbound",
+      "category": "Alimentação",
+      "price": 500,
+      "createdAt": "2023-05-04T23:38:53.735Z"
+    },
+    {
+      "id": "2",
+      "description": "Salario",
+      "type": "inbound",
+      "category": "Pagamentos",
+      "price": 2500,
+      "createdAt": "2023-05-05T23:38:53.735Z"
+    },
+    {
+      "id": "3",
+      "description": "Luz",
+      "type": "outbound",
+      "category": "Boletos",
+      "price": 120,
+      "createdAt": "2023-05-05T23:38:53.735Z"
+    },
+    {
+      "description": "Chips",
+      "price": 5,
+      "category": "Alimentação",
+      "type": "outbound",
+      "createdAt": "2023-08-06T16:58:45.410Z",
+      "id": "gUieS3L"
+    },
+    {
+      "description": "Lanche",
+      "price": 50,
+      "category": "Alimentação",
+      "type": "inbound",
+      "createdAt": "2023-08-06T19:56:43.011Z",
+      "id": "JqVR2OI"
+    },
+    {
+      "description": "Lanche 2",
+      "price": 40,
+      "category": "Alimentação",
+      "type": "outbound",
+      "createdAt": "2023-08-06T19:57:25.776Z",
+      "id": "WpbNlBt"
+    }
+  ]
+}

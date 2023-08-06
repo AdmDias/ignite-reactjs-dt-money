@@ -31,9 +31,9 @@ export const TransactionsTable = styled.table`
 
 
 interface PriceHighlightProps {
-    typeTransactionVariant: 'inbound' | 'outbound';
+    typetransactionvariant: 'inbound' | 'outbound';
 }
 
 export const PriceHighlight = styled.span<PriceHighlightProps>`
-    color: ${props => props.typeTransactionVariant === 'inbound' ? props.theme['green-300'] : props.theme['red-300']}
+    color: ${props => props.typetransactionvariant === 'inbound' ? props.theme['green-300'] : props.theme['red-300']}
 `;
